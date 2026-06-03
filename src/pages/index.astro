@@ -1,0 +1,285 @@
+---
+// index.astro - Landing Page Profesional para Venta de Servicios Web
+---
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Diseño de Páginas Web Profesionales | Tu Negocio en Internet</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+		
+		<style>
+			/* CONFIGURACIÓN BASE INSPIRADA EN TU PUBLICIDAD */
+			body { 
+				font-family: 'Montserrat', sans-serif; 
+				background-color: #0B1528; /* Azul marino profundo de fondo */
+				color: #FFFFFF;
+				margin: 0;
+				padding: 0;
+				min-height: 100vh;
+				display: flex;
+				justify-content: center;
+			}
+			
+			/* CONTENEDOR MÓVIL DIRECTO Y SCANNABLE */
+			.main-container {
+				width: 100%;
+				max-width: 440px;
+				margin: 0 auto;
+				padding: 40px 20px;
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			/* CABECERA CON GANCHO COMERCIAL */
+			.header-section {
+				text-align: center;
+				margin-bottom: 30px;
+			}
+			.main-title {
+				font-size: 26px;
+				font-weight: 700;
+				text-transform: uppercase;
+				color: #FFFFFF;
+				margin: 0 0 8px 0;
+				letter-spacing: 1px;
+			}
+			.highlight-yellow {
+				color: #FFD43F; /* Oro de tu publicidad */
+				font-size: 14px;
+				font-weight: 600;
+				display: block;
+				margin-top: 5px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+			}
+
+			/* CAJAS DE SERVICIOS ESTILIZADAS CON BORDES DE NEÓN */
+			.service-card {
+				width: 100%;
+				background: rgba(255, 255, 255, 0.03);
+				border-radius: 16px;
+				padding: 20px;
+				box-sizing: border-box;
+				margin-bottom: 20px;
+				text-align: left;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			/* Bordes de color según tu imagen */
+			.border-blue { border: 1.5px solid #00C2FF; }
+			.border-pink { border: 1.5px solid #FF007A; }
+			.border-gold { border: 1.5px solid #FFD43F; }
+
+			.card-header {
+				display: flex;
+				align-items: center;
+				gap: 14px;
+				margin-bottom: 10px;
+			}
+			.card-icon {
+				font-size: 24px;
+			}
+			.card-title {
+				font-size: 16px;
+				font-weight: 700;
+				text-transform: uppercase;
+				margin: 0;
+				letter-spacing: 0.5px;
+			}
+			.card-description {
+				font-size: 13px;
+				color: #A0AEC0;
+				line-height: 1.5;
+				margin: 0;
+				font-weight: 300;
+			}
+			
+			/* ETIQUETA RECOMENDADO */
+			.badge-recommended {
+				background: #FF0055;
+				color: #FFFFFF;
+				font-size: 10px;
+				font-weight: 700;
+				padding: 4px 8px;
+				border-radius: 6px;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				display: inline-block;
+				margin-left: auto;
+			}
+
+			/* FORMULARIO DE COTIZACIÓN DE ALTA CONVERSIÓN */
+			.form-section {
+				width: 100%;
+				background: #122038;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 20px;
+				padding: 24px;
+				box-sizing: border-box;
+				margin-top: 20px;
+				margin-bottom: 30px;
+				text-align: center;
+			}
+			.form-title {
+				font-size: 18px;
+				font-weight: 700;
+				color: #FFD43F;
+				text-transform: uppercase;
+				margin: 0 0 6px 0;
+				letter-spacing: 1px;
+			}
+			.form-subtitle {
+				font-size: 12px;
+				color: #FFFFFF;
+				opacity: 0.8;
+				margin: 0 0 20px 0;
+				line-height: 1.4;
+			}
+			.form-group {
+				margin-bottom: 14px;
+				text-align: left;
+			}
+			.form-input {
+				width: 100%;
+				padding: 14px 16px;
+				box-sizing: border-box;
+				background: #0B1528;
+				border: 1.5px solid rgba(255, 255, 255, 0.15);
+				border-radius: 10px;
+				font-size: 13px;
+				color: #FFFFFF;
+				outline: none;
+				font-family: 'Montserrat', sans-serif;
+				transition: border-color 0.3s;
+			}
+			.form-input:focus {
+				border-color: #00C2FF;
+			}
+			
+			/* BOTÓN DE ACCIÓN LLAMATIVO (WHATSAPP ESTILO PUBLICIDAD) */
+			.btn-submit {
+				width: 100%;
+				padding: 14px;
+				background: #00E676; /* El verde vibrante de tu franja de WhatsApp */
+				color: #0B1528;
+				border: none;
+				border-radius: 10px;
+				font-size: 14px;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				cursor: pointer;
+				font-family: 'Montserrat', sans-serif;
+				transition: background 0.3s;
+				margin-top: 5px;
+			}
+			.btn-submit:hover {
+				background: #00B359;
+			}
+
+			/* FOOTER CON ENLACE DE WHATSAPP DIRECTO */
+			.footer-section {
+				width: 100%;
+				text-align: center;
+				margin-top: auto;
+				padding-top: 10px;
+			}
+			.wa-link {
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+				color: #00E676;
+				text-decoration: none;
+				font-weight: 600;
+				font-size: 15px;
+				letter-spacing: 0.5px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<main class="main-container">
+			
+			<!-- CABECERA -->
+			<div class="header-section">
+				<h1 class="main-title">¿Tu Negocio</h1>
+				<span class="highlight-yellow">¿Aún no vendes en internet?</span>
+			</div>
+
+			<!-- SERVICIO 1: PÁGINA WEB INFORMATIVA -->
+			<div class="service-card border-blue">
+				<div class="card-header">
+					<span class="card-icon">💻</span>
+					<h2 class="card-title">Página Web Informativa</h2>
+				</div>
+				<p class="card-description">
+					Ideal para darte a conocer. Incluye diseño moderno, adaptado a celulares y presencia en Google.
+				</p>
+			</div>
+
+			<!-- SERVICIO 2: TIENDA EN LÍNEA COMPRETA -->
+			<div class="service-card border-pink">
+				<div class="card-header">
+					<span class="card-icon">🛒</span>
+					<h2 class="card-title">Tienda en Línea Completa</h2>
+				</div>
+				<p class="card-description">
+					Sube tus productos, recibe pagos con tarjeta y administra tus ventas de forma automática.
+				</p>
+			</div>
+
+			<!-- SERVICIO 3: TE LA DISEÑAMOS + CURSO ESPECIAL -->
+			<div class="service-card border-gold">
+				<div class="card-header">
+					<span class="card-icon">🎓</span>
+					<h2 class="card-title">Te la diseñamos + Curso</h2>
+					<span class="badge-recommended">¡Recomendado!</span>
+				</div>
+				<p class="card-description">
+					Creamos la estructura de tu web y te capacitamos de forma personalizada para que tú hagas el resto sin pagar mantenimiento.
+				</p>
+			</div>
+
+			<!-- FORMULARIO DE CAPTACIÓN -->
+			<div class="form-section">
+				<h3 class="form-title">¿Quieres Cotizar o Agendar?</h3>
+				<p class="form-subtitle">Escríbenos para enviarte nuestros paquetes y precios al instante.</p>
+				
+				<!-- Reemplazarás con tu webhook de Formspree o Make en el futuro -->
+				<form action="https://formspree.io/f/tu_codigo_aquí" method="POST">
+					<div class="form-group">
+						<input type="text" name="name" required placeholder="Nombre completo o de tu negocio" class="form-input" />
+					</div>
+					<div class="form-group">
+						<input type="tel" name="whatsapp" required placeholder="Número de WhatsApp" class="form-input" />
+					</div>
+					<div class="form-group">
+						<select name="servicio_interes" required class="form-input" style="background-image: none; -webkit-appearance: none;">
+							<option value="" disabled selected hidden>Selecciona el servicio que te interesa</option>
+							<option value="Informativa">Página Web Informativa</option>
+							<option value="Tienda">Tienda en Línea Completa</option>
+							<option value="Diseno+Curso">Diseño + Curso Especial</option>
+						</select>
+					</div>
+					<button type="submit" class="btn-submit">Solicitar Paquetes e Información</button>
+				</form>
+			</div>
+
+			<!-- REDES SOCIALES Y CONTACTO DIRECTO -->
+			<div class="footer-section">
+				<!-- Enlace directo al WhatsApp con el número de tu publicidad -->
+				<a href="https://wa.me/529981264934?text=Hola,%20vi%20tu%20publicidad%20en%20Marketplace%20y%20me%20gustaría%20cotizar%20una%20página%20web" target="_blank" class="wa-link">
+					🟢 WhatsApp: 998 126 4934
+				</a>
+			</div>
+			
+		</main>
+	</body>
+</html>
